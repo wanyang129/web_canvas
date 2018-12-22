@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background: #dddddd;
+    }
+
+    #canvas {
+      margin: 20px;
+      padding: 20px;
+      background: #ffffff;
+      border: thin inset #aaaaaa;
+      width: 600px;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas">
+    canvas not supported
+  </canvas>
+  <script>
+    /**
+     * 使用CSS来设置canvas元素的大小,与直接设置属性相比,其差别是基于这样一个事实的:
+     * canvas元素实际上有两套尺寸.一个是元素本身的大小,还有一个是元素绘图表面的大小.
+     * 当设置元素的weidth与height属性时,实际上是同时修改了该元素本身的大小与元素绘图表面的大小.
+     * 然而,如果是通过CSS来设定canvas元素的大小,那么只会改变元素本身的大小,而不会影响到绘图表面.
+     */
+    // 在默认情况下,浏览器所创建的canvas元素是300像素宽、150像素高.
+    var canvas = document.getElementById("canvas"),
+      // 获取绘图环境变量
+      context = canvas.getContext("2d");
+    context.font = "38pt Arial";
+    context.fillStyle = "cornflowerblue";
+    context.strokeStyle = "blue";
+    context.fillText("Hello Canvas", canvas.width / 2 - 150, canvas.height / 2 + 15);
+    context.strokeText("Hello Canvas", canvas.width / 2 - 150, canvas.height / 2 + 15);
+    /**
+     * font
+     * fillStyle
+     * globalAlpha
+     * globalCompsiteOperation
+     * lineCap:butt round square
+     * lineWidth
+     * lineJoin:bevel round miter
+     * miterLimit
+     * shadowBlur
+     * shadowColor
+     * shadowOffsetX
+     * shadowOffsetY
+     * strokeStyle
+     * textAlign
+     * textBaseline
+     * 
+     * save():将当前canvas的状态推送到一个保存canvas状态的堆栈顶部.
+     *        canvas状态包含了当前的坐标变换信息、剪辑区域一级所有canvas绘图环境对象的属性,包括strokeStyle、fillStyle与globalCompositeOperation等.
+     *        canvas状态并不包含当前的路径或位图.
+     */
+  </script>
+</body>
+
+</html>

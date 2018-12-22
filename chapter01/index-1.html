@@ -6,10 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    body {
+      background: #dddddd;
+    }
+
+    #canvas {
+      margin: 10px;
+      padding: 10px;
+      background: #ffffff;
+      border: thin inset #aaaaaa;
+    }
+  </style>
 </head>
 
 <body>
-
+  <canvas id="canvas" width="600" height="300">
+    canvas not supported
+  </canvas>
+  <script>
+    // 在默认情况下,浏览器所创建的canvas元素是300像素宽、150像素高.
+    var canvas = document.getElementById("canvas"),
+      // 获取绘图环境变量
+      context = canvas.getContext("2d");
+    context.font = "38pt Arial";
+    context.fillStyle = "cornflowerblue";
+    context.strokeStyle = "blue";
+    context.fillText("Hello Canvas", canvas.width / 2 - 150, canvas.height / 2 + 15);
+    context.strokeText("Hello Canvas", canvas.width / 2 - 150, canvas.height / 2 + 15);
+  </script>
 </body>
 
 </html>
